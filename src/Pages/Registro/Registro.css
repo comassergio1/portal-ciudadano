@@ -1,0 +1,64 @@
+
+
+
+#contenedorTitulo{
+    width: 50%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+
+.etapaSeleccionada{
+    background-color: #48e046;
+    border: 0.15rem solid #48e046;
+    border-radius: 5rem;
+    color: #00324b;
+    font-family: Raleway,Arial,sans-serif;
+    font-size: .9rem;
+    font-weight: 700;
+    line-height: 2rem;
+    min-width: 9rem; 
+    width: 40%;
+ }
+
+ .otraEtapa {
+    background-color: #32bcfc;
+    border: 0.15rem solid #32bcfc;
+    border-radius: 50%;
+    color: #fff;
+    font-family: Raleway,Arial,sans-serif;
+    
+}
+
+
+
+.pagination .page-item.active .page-link { 
+    background-color: #48e046; 
+    color:white;
+    border-radius: 50%;    
+}
+
+.pagination .page-item .page-link { 
+    background-color: white; 
+    color:#32bcfc;
+    border-radius: 50%;    
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+
+
+
+#id_number{
+    width: 50%;
+}
+
+#first_name{
+    width: 50%;
+}
