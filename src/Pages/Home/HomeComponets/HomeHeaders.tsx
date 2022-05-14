@@ -19,10 +19,9 @@ return (
     <Navbar bg="light" expand="lg">
         <Container fluid>
             <Nav className="me-auto">
-                <Nav.Link href="#home">SERVICIOS ONLINE</Nav.Link>
-                <Nav.Link href="#features">MIS TRÁMITES</Nav.Link>
-                <Nav.Link href="#pricing">ALERTAS Y MENSAJES</Nav.Link>
-                <Nav.Link href="#pricing">CUENTAS DE USUARIO</Nav.Link>
+                <Nav.Link href="/mis-servicios">SERVICIOS ONLINE</Nav.Link>
+                <Nav.Link href="/mis-tramistes">MIS TRÁMITES</Nav.Link>
+                <Nav.Link href="/alertas-mensajes">ALERTAS Y MENSAJES</Nav.Link>
 
             </Nav>
         </Container>
