@@ -1,7 +1,6 @@
 import { Container, Dropdown, Nav, Navbar } from "react-bootstrap"
 import { SearchBar } from "../../../Components/SearchBar/SearchBar"
 
-
 export const BrowserScreenHeader = () => {
 
 return (
@@ -15,7 +14,9 @@ return (
     <div id="contenedorHeaderDerecha">
         <SearchBar></SearchBar>
     </div>
-</div><Navbar bg="light" expand="lg">
+</div>
+
+    <Navbar bg="light" expand="lg">
         <Container fluid>
             <Nav className="me-auto">
                 <Nav.Link href="#home">SERVICIOS ONLINE</Nav.Link>
@@ -25,7 +26,20 @@ return (
 
             </Nav>
         </Container>
-    </Navbar></>
+    </Navbar>
+
+    <Navbar bg="dark" variant="dark">
+    <Container>
+    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+    <Nav className="me-auto">
+      <Nav.Link href="#home">Home</Nav.Link>
+      <Nav.Link href="#features">Features</Nav.Link>
+      <Nav.Link href="#pricing">Pricing</Nav.Link>
+    </Nav>
+    </Container>
+  </Navbar>    
+
+    </>
 )
 
 }

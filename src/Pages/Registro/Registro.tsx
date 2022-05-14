@@ -1,14 +1,11 @@
-import { Link } from "react-router-dom";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Pagination } from "react-bootstrap";
 import './Registro.css';
-import { MouseEventHandler, useEffect, useState } from "react";
 import { FooterComponet } from "../../Components/Footer";
 import { RegistroHeader } from "./RegistroComponets/RegistroHeader";
 import { Campos } from "./RegistroComponets/RegistroCampos";
 import { getTokenSourceMapRange } from "typescript";
 
+import { Link } from "react-router-dom";
 
 
 
