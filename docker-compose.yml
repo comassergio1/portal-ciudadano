@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  react-app:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend/src:/app/frontend/src
+    env_file:
+      - ./frontend/.env
+
+# Docker command: docker-compose -f docker-compose.yml up
+# Docker command: docker-compose down
