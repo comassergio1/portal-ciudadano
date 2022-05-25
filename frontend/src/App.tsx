@@ -8,6 +8,7 @@ import { ErrorPage } from './Pages/ErrorPage';
 import { ResetPassword } from './Pages/Auth/ResetPassword';
 import { RegisterPage } from './Pages/Auth/Register';
 import { LoginPage } from './Pages/Auth/Login';
+import PrivateRoute from './Components/PrivateRoute';
 
 function App() {
   return (
@@ -16,10 +17,16 @@ function App() {
         <Routes>
           <Route path="/" element={<DefaultLayout />}>
             <Route index element={<HomePage />} />
-            <Route path="tramites" element={<TramitesPage />} />
             <Route path="Ingresar" element={<LoginPage />} />
             <Route path="Registro" element={<RegisterPage />} />
             <Route path="RestaurarPassword" element={<ResetPassword />} />
+            <Route path="Tramites"
+              element={
+                <PrivateRoute>
+                  <TramitesPage />
+                </PrivateRoute>
+              }
+            />
             <Route path="*" element={<ErrorPage />} />
           </Route>
         </Routes>

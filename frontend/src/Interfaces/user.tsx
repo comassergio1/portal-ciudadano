@@ -5,7 +5,3 @@ export interface user{
     email:string 
     celular:number
 }
-
-export interface token{
-    
-}
