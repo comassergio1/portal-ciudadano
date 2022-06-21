@@ -2,16 +2,51 @@ import { useState } from 'react';
 import { signupFields } from "../../Interfaces/formFields";
 import Input from '../../Components/Forms/Input';
 import { Hero } from '../../Components/Elements/Hero';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const fields = signupFields;
 let fieldsState = {};
 fields.forEach(field => (fieldsState as any)[field.id] = '');
 
 export const RegisterPage = () =>{
-    const [loginState,setLoginState]=useState(fieldsState);
+
+    const navigate = useNavigate();
+
+    const [registerState,setRegisterState]=useState(fieldsState);
+
     const handleChange=(e: any)=>{
-        setLoginState({...loginState,[e.target.id]:e.target.value})
+        setRegisterState({...registerState,[e.target.id]:e.target.value})
+    }
+
+    const buttonHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault();
+        RegisterUser()
+    };
+
+    const RegisterUser = () =>{
+        console.log("pues entro aqui"+ JSON.stringify(registerState))
+        axios
+        .post("https://urlBase/portal-ciudadano/v1/ciudadano/singup", JSON.stringify(registerState))
+        .then(function (response) {
+
+          if (response.data.success === false) {
+            
+              // errores de registro
+              
+          } else {
+            
+            //mostrar mensaje de login correcto  
+        
+            setTimeout(() => {
+              navigate("/Ingresar");
+            }, 3000);
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+          
+        });
     }
 
     return(<Hero classes="bg-gradient-to-r from-cyan-500 to-blue-500 text-white" tail={true}>
@@ -22,7 +57,7 @@ export const RegisterPage = () =>{
                     {fields.map(field=><Input
                         key={field.id}
                         handleChange={handleChange}
-                        value={(loginState as any)[field.id]}
+                        value={(registerState as any)[field.id]}
                         labelText={field.labelText}
                         labelFor={field.labelFor}
                         id={field.id}
@@ -33,7 +68,7 @@ export const RegisterPage = () =>{
                         placeholder={field.placeholder}
                     />)}
                     <div className="text-center mt-6">
-                        <button className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full" type="button" style={{ transition: "all .15s ease" }}>
+                        <button className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full" type="button" style={{ transition: "all .15s ease" }} onClick={buttonHandler}>
                             Crear Cuenta
                         </button>
                     </div>

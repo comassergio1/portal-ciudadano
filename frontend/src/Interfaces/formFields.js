@@ -1,14 +1,14 @@
 const loginFields=[
     {
-        labelText:"Email",
-        labelFor:"email-address",
-        id:"email-address",
-        name:"email",
-        type:"email",
-        autoComplete:"email",
+        labelText:"Cuil",
+        labelFor:"cuil",
+        id:"cuil",
+        name:"cuil",
+        type:"number",
+        autoComplete:"CUIL",
         isRequired:true,
         autofocus: true,
-        placeholder:"Email"   
+        placeholder:"CUIL"   
     },
     {
         labelText:"Contraseña",
