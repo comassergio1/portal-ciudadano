@@ -12,7 +12,7 @@ fields.forEach(field => (fieldsState as any)[field.id] = '');
 
 export const LoginPage = () =>{
     
-    const [loginState,setLoginState]=useState(fieldsState);
+    const [loginState,setLoginState]=useState (fieldsState);
     
     const navigate = useNavigate();
 
@@ -23,9 +23,13 @@ export const LoginPage = () =>{
 
     const buttonHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
+
         authenticateUser()
     };
 
+
+    //loginState[password]
+    
     const authenticateUser = () =>{
         axios
         .post("https://urlBase/portal-ciudadano/v1/ciudadano/login", JSON.stringify(loginState))
@@ -39,7 +43,6 @@ export const LoginPage = () =>{
           } else {
             
             //mostrar mensaje de login correcto  
-
             localStorage.setItem("auth", response.data.token);
             setTimeout(() => {
               navigate("/");
