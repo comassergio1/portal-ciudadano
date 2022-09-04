@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Hero } from "../Components/Elements/Hero";
 
-export const HomeInitPage = () => {
+export const HomePage = () => {
   return (
     <Hero classes="bg-gradient-to-r from-cyan-500 to-blue-500 text-white" tail={true}>
       <h1 className="my-4 text-4xl lg:text-5xl font-bold leading-tight">

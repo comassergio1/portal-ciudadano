@@ -2,13 +2,14 @@
 import './Styles/App.css';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { DefaultLayout } from './Components/Layout/DefaultLayout';
-import { HomeInitPage } from './Pages/HomePage';
+import { HomePage } from './Pages/HomePage';
 import { TramitesPage } from './Pages/Tramites/index';
 import { ErrorPage } from './Pages/ErrorPage';
 import { ResetPassword } from './Pages/Auth/ResetPassword';
 import { RegisterPage } from './Pages/Auth/Register';
 import { LoginPage } from './Pages/Auth/Login';
-import PrivateRoute from './Components/PrivateRoute';
+import { HomeRoute, PrivateRoute } from './Routes/PrivateRoute';
+import { DashboardCiudadanoPage } from './Pages/Dashboard/DashboardCiudadano';
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
     <BrowserRouter>
         <Routes>
           <Route path="/" element={<DefaultLayout />}>
-            <Route index element={<HomeInitPage />} />
+            <Route index element={<HomeRoute />} />
+            <Route path="Inicio" element={<HomePage />} />
             <Route path="Ingresar" element={<LoginPage />} />
             <Route path="Registro" element={<RegisterPage />} />
             <Route path="RestaurarPassword" element={<ResetPassword />} />
@@ -27,7 +29,6 @@ function App() {
                 </PrivateRoute>
               }
             />
-          
             <Route path="*" element={<ErrorPage />} />
           </Route>
         </Routes>
