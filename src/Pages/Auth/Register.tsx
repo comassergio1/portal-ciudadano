@@ -28,7 +28,7 @@ export const RegisterPage = () =>{
         console.log("pues entro aqui"+ JSON.stringify(registerState))
         axios
         .post("https://urlBase/portal-ciudadano/v1/ciudadano/singup", JSON.stringify(registerState))
-        .then(function (response) {
+        .then(function (response: any) {
 
           if (response.data.success === false) {
             
@@ -43,7 +43,7 @@ export const RegisterPage = () =>{
             }, 3000);
           }
         })
-        .catch(function (error) {
+        .catch(function (error: any) {
           console.log(error);
           
         });
